@@ -1,0 +1,169 @@
+@import "vars";
+
+.trade-anywhere {
+  position: relative;
+  padding: 121px 0px 0px 0px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 520px;
+    background: $accent-gradient;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 8%;
+    width: 100%;
+    height: 275px;
+    background: url("../images/dec_down3.svg") no-repeat center;
+    z-index: 0;
+  }
+  &__body {
+    max-width: 980px;
+    position: relative;
+    background-color: $white;
+    box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 74px 15px 85px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 5;
+  }
+
+  &__title {
+    background: $accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0px 0px 17px 0px;
+  }
+  .title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__items {
+    margin: 60px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    column-gap: 63px;
+    overflow: hidden;
+  }
+
+  &__item {
+    max-width: 262px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 226px;
+    border-radius: 15px;
+    padding: 41px 0 51px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      border-radius: 15px;
+      border: 4px solid transparent;
+      background: $accent-gradient border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+    }
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      background: $accent-gradient;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+    &:hover::before {
+      left: 0;
+    }
+  }
+}
+.item-trade-anywhere {
+  svg stop {
+    transition: all 0.3s ease;
+  }
+  &_1 {
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: transform 0.8s ease 0.5s, opacity 0.8s ease 0.5s;
+    }
+    .item-trade-anywhere__text {
+      margin: 51px 0px 0px 0px;
+      font-weight: 700;
+    }
+  }
+  &_2 {
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: transform 0.8s ease 0.5s, opacity 0.8s ease 0.5s;
+    }
+    .item-trade-anywhere__text {
+      margin: 54px 0px 0px 0px;
+      font-weight: 700;
+    }
+  }
+  &:hover {
+    color: $white;
+    .svg-bitcoin stop,
+    .svg-giftcard #paint0_linear_32_2931 stop {
+      stop-color: $white;
+    }
+    .item-trade-anywhere__rect_2,
+    .item-trade-anywhere__rect_3 {
+      fill: url("#paint0_linear_32_2932");
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .trade-anywhere {
+    padding: 80px 0 0 0;
+  }
+  .trade-anywhere::after {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .trade-anywhere__body {
+    padding: 74px 0;
+    margin: 0 -15px;
+  }
+  .trade-anywhere__items {
+    flex-wrap: wrap;
+    row-gap: 30px;
+    margin: 45px 0px 0px 0px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .trade-anywhere__title {
+    font-size: 21px;
+  }
+}

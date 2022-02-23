@@ -1,0 +1,88 @@
+@import "vars";
+
+.experience {
+  position: relative;
+  padding: 83px 0 116px;
+  z-index: 10;
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__column {
+    flex: 1 0 50%;
+  }
+
+  &__title {
+    line-height: 42px;
+    background: $accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0px 0px 18px 0px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 40px;
+    color: $dark;
+    margin: 50px 0px 0px 0px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: all 0.8s ease 0.5s;
+    }
+  }
+
+  &__btn {
+    padding: 0 34px;
+    margin: 29px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 35px 0 85px;
+    &__body {
+      flex-wrap: wrap;
+    }
+  }
+  .experience__title {
+    text-align: center;
+    &::after {
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+  .experience__column:last-child {
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+  }
+  .experience__text {
+    line-height: 32px;
+    margin: 40px 0px 0px 0px;
+  }
+  .experience__button {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience {
+    padding: 0 0 60px 0;
+  }
+  .experience__title {
+    font-size: 21px;
+  }
+}

@@ -1,0 +1,43 @@
+// .animate-left {
+//   animation: anim-left 1s ease forwards;
+// }
+
+// @keyframes anim-left {
+//   0% {
+//     transform: translate(-100px, 0);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translate(0, 0);
+//     opacity: 1;
+//   }
+// }
+
+// .animate-right {
+//   transform: translate(100px, 0);
+//   animation: anim-right 1s ease forwards;
+// }
+
+// @keyframes anim-right {
+//   0% {
+//     transform: translate(100px, 0);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translate(0, 0);
+//     opacity: 1;
+//   }
+// }
+
+// .zoom {
+//   animation: zoomIn 500ms linear forwards;
+// }
+
+// @keyframes zoomIn {
+//   0% {
+//     transform: scale(0);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// }

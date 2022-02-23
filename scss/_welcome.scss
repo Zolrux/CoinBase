@@ -1,0 +1,98 @@
+@import "vars";
+
+.welcome {
+  position: relative;
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     bottom: -45%;
+  //     left: 0;
+  //     right: 0;
+  //     width: 100%;
+  //     height: 424px;
+  //     background: url("../images/decor-2.svg") center no-repeat;
+  //     overflow: hidden;
+  //     z-index: 1;
+  //   }
+  z-index: 10;
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  &__image {
+  }
+
+  &__content {
+    max-width: 545px;
+  }
+
+  &__title {
+    line-height: 65px;
+    background: $accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0px 0px 36px 0px;
+    position: relative;
+    transform: translate(0, 100%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0%, 0);
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 40px;
+    color: $dark;
+    margin: 0px 0px 35px 0px;
+    transform: translate(0, 100%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 940px) {
+  .welcome__image {
+    display: none;
+  }
+  .welcome__content {
+    max-width: 100%;
+  }
+  .welcome__title {
+    text-align: center;
+    &::after {
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+  .welcome__text {
+    line-height: 32px;
+  }
+  .welcome__button {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome__title {
+    font-size: 21px;
+  }
+  .welcome__text {
+    margin: 0px 0px 28px 0px;
+  }
+}

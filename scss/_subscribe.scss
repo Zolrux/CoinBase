@@ -1,0 +1,106 @@
+@import "vars";
+
+.subscribe {
+  padding: 293px 0px 91px 0px;
+  text-align: center;
+  &__title {
+    background: $accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 65px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  .title::after {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  &__text {
+    max-width: 359px;
+    line-height: 40px;
+    color: $dark;
+    margin: 37px auto 0px;
+    transform: translate(0, 120%);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: all 0.8s ease 0.5s;
+    }
+  }
+}
+
+.form-subscribe {
+  margin: 60px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 9px;
+  &__label {
+    position: relative;
+    flex: 0 1 388px;
+    margin: 0px 10px 0px 0px;
+    cursor: text;
+    transform: translate(-120%, 0);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      border-radius: 100px;
+      border: 2px solid transparent;
+      background: $accent-gradient border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 100px;
+    padding: 17px 10px 17px 26px;
+    &::placeholder {
+      color: $dark;
+    }
+  }
+
+  &__btn {
+    padding: 0 44px;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s ease;
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+      transition: all 0.8s ease 0.7s;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .subscribe {
+    padding: 60px 0;
+  }
+  .form-subscribe {
+    margin-top: 40px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+}
